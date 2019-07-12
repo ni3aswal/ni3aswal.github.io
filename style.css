@@ -1,0 +1,238 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* 
+.buttonss {
+    display:none;
+} */
+
+.abc
+{
+	
+	display: inline-flex;
+	color: #777;
+fill: currentColor;
+border: 1px solid transparent;
+background-color: hsla(0,0%,100%,.85);
+border-top-color: transparent;
+height: 32px;
+padding: 0 11px;
+font-size: 14px;
+line-height: 30px;
+border-radius: 4px;
+box-shadow: 0 1px 1px rgba(0,0,0,.04);
+transition: all .2s ease-in-out;
+text-align: center;
+text-decoration: none;
+font-weight: 500;
+    box-sizing: border-box;
+}
+}
+div.photo-item {
+  position: relative;
+  float: left;
+  margin: 5px;
+}
+
+div.photo-item:hover .aa {
+  opacity: 0.5;
+}
+
+div.photo-item:hover input {
+  display: block;
+}
+div.photo-item:hover button {
+  display: block;
+}
+div.photo-item:hover .photo {
+  display: block;
+    opacity: 1;
+}
+.photo-item__caption
+{
+	position: absolute;
+  display: none;
+	
+}
+.photo-item__category
+{
+	position: absolute;
+  display: none;
+	
+}
+div.photo-item:hover .photo-item__caption {
+  position: linear;
+  display: block;
+  left: 15%;
+  bottom: 7%;
+}
+div.photo-item:hover .photo-item__category {
+  position: linear;
+  display: block;
+  left: 15%;
+  top: 7%;
+}
+div.photo-item:hover .p {
+  display: block;
+    opacity: 1;
+}
+
+div.photo-item input {
+  position: absolute;
+  display: none;
+}
+div.photo-item button {
+  position: absolute;
+  display: none;
+}
+div.photo-item .photo {
+  position: absolute;
+  display: none;
+  border-radius:50%;
+}
+
+div.photo-item .photo {
+  left: 5%;
+  bottom:5%;
+}
+
+div.photo-item button.like {
+  right: 28%;
+  top: 5%;
+  color:red;
+  text-decoration:none;
+ 
+}
+
+div.photo-item button.download1 {
+  right: 5%;
+  bottom: 5%;
+}
+
+div.photo-item button.collect {
+  top: 5%;
+  right: 5%;
+
+}
+
+.grid__col-sizer,
+.photo-item {
+  width: 32%;
+}
+
+.grid__gutter-sizer {
+  width: 2%;
+}
+
+.photo-item {
+  margin-bottom: 10px;
+  float: left;
+}
+
+.photo-item__image {
+  display: block;
+  max-width: 100%;
+  cursor:zoom-in;
+}
+/* .photo-item__image:hover {
+    opacity: 0.2;
+} */
+
+/* .photo-item:hover .buttonss {
+    display:block;
+}
+ */
+ 
+ 
+.photo-item__caption {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  margin: 0;
+}
+.photo-item__category {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  margin: 0;
+}
+.photo-item__caption a {
+  color: white;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+.photo-item__category a {
+  color: white;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+.page-load-status {
+  display: none; 
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+   margin-left: auto;
+    margin-right: auto;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+	.img-wrap {
+  width: relative;
+  height: relative;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+  
+}
+
+.download{
+
+    width: 180px;
+flex-shrink: 0;
+    padding: 4px;
+    display: flex;
+
+}
+.downloadbtn{
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    color: #fff !important;
+    fill: currentColor !important;
+    background-color: #3cb46e;
+    display: inline-block;
+    height: 32px;
+    padding: 0 11px;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+
+/* modal */
+
