@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="./style.css">
 	<!-- Compiled and minified CSS --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -15,34 +16,54 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
+   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
+   padding-right: 100px;
+    padding-bottom: 100px;
+    padding-left: 70px;
+    padding-top: 32px;
+    min-height: 100%;
+    outline: none;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: 7;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+  backface-visibility: hidden;
+  overflow: auto;
+background-color: rgba(0,0,0,.6);
 
+cursor: zoom-out;
+  
+}
+.modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
 /* Modal Content */
 .modal-content {
   position: relative;
-  background-color: #fefefe;
   margin: auto;
   padding: 0;
   border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s
   border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+	width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0,0,0,.15);
+    min-width: 0;
+  
 }
 
 /* Add Animation */
@@ -77,7 +98,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .modal-body {padding: 2px 16px;}
-
+.modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
 .modal-footer {
   padding: 2px 16px;
   background-color: #5cb85c;
@@ -91,19 +115,29 @@ body {font-family: Arial, Helvetica, sans-serif;}
     z-index: 1;
 	border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+	overflow: hidden;
 }
 
 
 .headerdiv {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+	
+	
 }
 .headerelemline {
+overflow: hidden;
+	position: sticky;
+
+top: 0;
+
+z-index: 1;
     display: flex;
     align-items: center;
     padding: 9px 12px;
     background-color: #fff;
 }
+
 .picnameurl {
     min-width: 0;
     flex-grow: 1;
@@ -183,6 +217,53 @@ element {
 }
 
 
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
 
 
 </style>
@@ -193,8 +274,23 @@ element {
 	
 	
 </head>
-<body>
 
+<body>
+<div class="header">
+  <a href="#default" class="logo"><svg class="_2m4hn" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-labelledby="unsplash-home" aria-hidden="false"><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></a>
+  
+ <div class="header-left"> 
+<div style="margin-left: 18px; width: 100%;"><form class="_2jvJJ mV0BM" data-test="nav-bar-search-form-form"><button title="Search Unsplash" class="_2VoZY _3d86A" type="submit" data-test="nav-bar-search-form-button"><svg class="_2-tlh _1azRR _1mPD6" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M31 28.64l-7.57-7.57a12.53 12.53 0 1 0-2.36 2.36l7.57 7.57zm-17.5-6a9.17 9.17 0 1 1 6.5-2.64 9.11 9.11 0 0 1-6.5 2.67z"></path></svg><span class="_3cUBZ _2iX7Z">Search</span></button>
+<div class="">
+
+<input type="search" placeholder="Search photos" autocapitalize="none" spellcheck="false" role="combobox" aria-expanded="false"></div></form></div>
+ </div>
+  <div class="header-right">
+    <a class="active" href="#home">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+</div>
 
 <div class="grid">
   <div class="grid__col-sizer"></div>
@@ -212,14 +308,15 @@ element {
 </div>
 
 <script type="text/html" id="photo-item-template">
+
+<a href="#my_modal" data-toggle="modal" data-user='{"imgsrc": "{{urls.regular}}","name":"{{user.name}}","prolink":"{{user.links.html}}", "propic":"{{user.profile_image.small}}"    , "username": "{{user.username}}" , "insta":"{{user.instagram_username}}"  }'>
   <div style="background-color:#231819;" class="photo-item">
-  <img  class="photo-item__image aa" src="{{urls.regular}}" alt="Photo by {{user.name}}" onclick=
-  '{document.getElementById("{{user.username}}modal").style.display = "block";}'/>
-   <a href="{{user.links.html}}?utm_source=infinite-scroll-demos&utm_medium=referral&utm_campaign=api-credit">
+ <img  class="photo-item__image aa" src="{{urls.regular}}" alt="Photo by {{user.name}}"/>
+   <a href="{{user.links.html}}">
   <img class="photo" src="{{user.profile_image.small}}" width="32" height="32"/> 
   </a>
   <p class="photo-item__caption">
-      <a href="{{user.links.html}}?utm_source=infinite-scroll-demos&utm_medium=referral&utm_campaign=api-credit">{{user.name}}</a>
+      <a href="{{user.links.html}}">{{user.name}}</a>
     </p>
 <button class="collect abc"  style="background:#eae1e1d1;color:#000;" onclick="" >
 <svg version="1.1" viewBox="0 0 32 32" width="20" height="20" aria-hidden="false"><path d="M14 3h4v26h-4zM29 14v4h-26v-4z"></path></svg>
@@ -230,27 +327,31 @@ element {
 <button class="download1 abc" style="background:#eae1e1d1;" type="button" value="Download">
 <a title="Download photo" href="{{links.download}}?force=true"  rel="nofollow" target="_blank"><svg version="1.1" viewBox="0 0 32 32" width="20" height="20" aria-hidden="false"><path d="M25.8 15.5l-7.8 7.2v-20.7h-4v20.7l-7.8-7.2-2.7 3 12.5 11.4 12.5-11.4z"></path></svg></a>
 </button>
+</div>
+</a>
+
+</script>
 
 <!-- The Modal -->
  
-<div id="{{user.username}}modal" class="modal">
-<button id="close" onclick=
-  '{document.getElementById("{{user.username}}modal").style.display = "none";}'>Close
+<div id="my_modal" class="modal">
+<button id="close" style="background:transparent;border:none;" data-dismiss="modal" onclick="">X
 </button>
   <div class="modal-content">
-    <div class="modal-header">
+   
 	  <div class="headerelem">  
          <header class="headerdiv headerelemline">
 			<div class="picnameurl">
 			<span class="stickroparentt">
 			<div class="pic" style="width: 32px; height: 32px;">
-			<a href="/@thevantagepoint718">
-			<img src="{{user.profile_image.small}}" style="opacity:1;" alt="Go to Lerone Pieters's profile">
+			<a id="lin1" href="">
+			<img id="propic" src="" style="opacity:1;" alt="">
 			</a>
 			</div>
                 <div>
-                <a class="fonturl url" href="/@thevantagepoint718">
-                     {{user.name}}</a><a class=" url" href="/@thevantagepoint718">
+                <a id="lin2" class="fonturl url" href="">
+                     {{user.name}}</a>
+					 <a id="lin3" class="url" href="">
                       @{{user.username}}</a></div></span>
                        </div>
 				<div class="likebutton">
@@ -261,28 +362,84 @@ element {
 
 				<div class="download"><a title="Download photo" href="download image" rel="nofollow" download="" target="_blank" class="downloadbtn">
 				<svg class="overflowflex" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M25.8 15.5l-7.8 7.2v-20.7h-4v20.7l-7.8-7.2-2.7 3 12.5 11.4 12.5-11.4z"></path></svg><span style="display: inline;center" >Download free</span></a></div>
-</div>
-
-</header>
-
-
-</div>
-	  </div>
-    <div class="modal-body">
-      <img  style="height:250px; width: 100%;" src="{{urls.regular}}" alt="Photo by {{user.name}}" />
-    </div>
-	<div class="_3dxKb"><a class="_37zTg _1l4Hh _1CBrG _1zIyn xLon9 _10F2J ldOpn NDx0k _2Xklx" href="/photos/NEsS80iDVdw/share"><div class="_10F2J"><svg class="_1xhtJ" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M0 26c0 1.7.2 3.3.6 4.9.2.9.7.9 1 0 2.1-5.3 5.5-10.3 11.1-11.3h3.3v4.4c0 2 1.2 2.6 2.6 1.4l12.8-11c.7-.6.7-1.6 0-2.3l-12.8-11c-1.4-1.3-2.6-.6-2.6 1.3v4.7c-9.6 1.6-16 9.4-16 18.9z"></path></svg><span class="_3UPwX">Share</span></div></a></div>
-	<p class="url" style="color:#d1d1d1;">Instagram: @{{user.instagram_username}}</p>
-	<div class="_3dxKb"><a class="_37zTg _1l4Hh _1CBrG _1zIyn xLon9 _3JXJ6 NDx0k _2Xklx" href="/photos/NEsS80iDVdw/info"><svg class="_1rYbs" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm2 25c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-12c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v12zm0-16c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v2z"></path></svg><span class="_1efgd">Info</span></a></div>
-    <div class="modal-footer">
-      <!-- <h3>Modal Footer</h3> -->
+              </div>
+			  
+                </header>
+                </div>
+	 
 	  
-    </div>
-  </div></div>
+   
+     <div><img sizes="(max-width: 767px) 100vw, (max-width: 366px) 334px, (max-height: 676px) 334px, (min-aspect-ratio: 4806/7205) calc((calc(100vh - 175px)) * 0.667037), calc(100vw - 32px)" class="photo-item__image aa"  id="imgg" src="" srcset="" alt="Photo by {{user.name}}" /> </div>
+  
+     <!-- <div><img sizes="(max-width: 767px) 100vw, (max-width: 366px) 334px, (max-height: 676px) 334px, (min-aspect-ratio: 4806/7205) calc((calc(100vh - 175px)) * 0.667037), calc(100vw - 32px)" class="photo-item__image aa"  id="imgg" src="" srcset="" alt="Photo by {{user.name}}" /> </div>
+	 -->
+	
+
+	  <div> <div class="_3dxKb"><a class="_37zTg _1l4Hh _1CBrG _1zIyn xLon9 _10F2J ldOpn NDx0k _2Xklx" href="/photos/NEsS80iDVdw/share"><div class="_10F2J"><svg class="_1xhtJ" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M0 26c0 1.7.2 3.3.6 4.9.2.9.7.9 1 0 2.1-5.3 5.5-10.3 11.1-11.3h3.3v4.4c0 2 1.2 2.6 2.6 1.4l12.8-11c.7-.6.7-1.6 0-2.3l-12.8-11c-1.4-1.3-2.6-.6-2.6 1.3v4.7c-9.6 1.6-16 9.4-16 18.9z"></path></svg><span class="_3UPwX">Share</span></div></a></div>
+	<div class="_3dxKb" style="align:left;"><p id="insta" class="url" style="color:#d1d1d1;">{{user.instagram_username}}</p></div>
+	<div class="_3dxKb"><a class="_37zTg _1l4Hh _1CBrG _1zIyn xLon9 _3JXJ6 NDx0k _2Xklx" href="/photos/NEsS80iDVdw/info"><svg class="_1rYbs" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm2 25c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-12c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v12zm0-16c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v2z"></path></svg><span class="_1efgd">Info</span></a></div>
+	  </div>
+
+	
+  </div>
 
 </div>
-  
+
+
+
+
+<!-- 
+<div class="modal" id="my_modal">
+ 
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Modal header</h4>
+      </div>
+      <div class="modal-body">
+        <p>some content</p>
+        <input type="text" name="bookId" value=""/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div> -->
+
+<script>
+$('#my_modal').on('show.bs.modal', function(e) {
+      var imgsrc = $(e.relatedTarget).data('user').imgsrc;
+      var name = $(e.relatedTarget).data('user').name;
+	var prolink = $(e.relatedTarget).data('user').prolink;
+	var propic = $(e.relatedTarget).data('user').propic;
+	var username = $(e.relatedTarget).data('user').username;
+    var insta = $(e.relatedTarget).data('user').insta;
+	$(e.currentTarget).find('img[id="imgg"]').attr("src", imgsrc);
+	
+	
+	/* var scset= imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80 334w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80 634w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=668&amp;q=80 668w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=934&amp;q=80 934w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=1234&amp;q=80 1234w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=1268&amp;q=80 1268w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=1534&amp;q=80 1534w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=1834&amp;q=80 1834w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=1868&amp;q=80 1868w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=2134&amp;q=80 2134w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=2434&amp;q=80 2434w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=2468&amp;q=80 2468w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=2734&amp;q=80 2734w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3034&amp;q=80 3034w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3068&amp;q=80 3068w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3334&amp;q=80 3334w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3634&amp;q=80 3634w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3668&amp;q=80 3668w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3934&amp;q=80 3934w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4234&amp;q=80 4234w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4268&amp;q=80 4268w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4534&amp;q=80 4534w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w';
+	
+	
+	$(e.currentTarget).find('img[id="imgg"]').attr("srcset", scset);
+	
+	*/
+	
+	
+	
+	$(e.currentTarget).find('img[id="imgg"]').attr("alt", "Photo by "+name);
+	$(e.currentTarget).find('a[id="lin1"]').attr("href", prolink);
+	$(e.currentTarget).find('a[id="lin2"]').attr("href", prolink);
+	$(e.currentTarget).find('a[id="lin3"]').attr("href", prolink);
+	$(e.currentTarget).find('a[id="lin2"]').html(name);
+	$(e.currentTarget).find('a[id="lin3"]').html("@"+username);
+	$(e.currentTarget).find('img[id="propic"]').attr("src", propic);
+	$(e.currentTarget).find('img[id="propic"]').attr("alt", "Go to "+name+"'s profile");
+	$(e.currentTarget).find('input[name="bookId"]').val(insta);
+	$(e.currentTarget).find('p[id="insta"]').html("Instagram: @"+insta);
+	
+});
 </script>
+
 <div class="loader" id="loader"> </div>
 <script src='https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.js'></script>
 <script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'></script>
