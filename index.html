@@ -306,7 +306,7 @@ element {
 
 <script type="text/html" id="photo-item-template">
 
-<a href="#my_modal" data-toggle="modal" data-user='{"imgsrc": "{{urls.regular}}","name":"{{user.name}}","prolink":"{{user.links.html}}", "propic":"{{user.profile_image.small}}"    , "username": "{{user.username}}" , "insta":"{{user.instagram_username}}"  }'>
+<a href="#my_modal" data-toggle="modal" data-user='{"imgsrc": "{{urls.regular}}","name":"{{user.name}}","prolink":"{{user.links.html}}", "propic":"{{user.profile_image.small}}"    , "username": "{{user.username}}" , "insta":"{{user.instagram_username}}" ,"down":"{{links.download}}?force=true" }'>
   <div style="background-color:#231819;" class="photo-item">
  <img  class="photo-item__image aa" src="{{urls.regular}}" alt="Photo by {{user.name}}"/>
    <a href="{{user.links.html}}">
@@ -315,7 +315,7 @@ element {
   <p class="photo-item__caption">
       <a href="{{user.links.html}}">{{user.name}}</a>
     </p>
-<button class="collect abc"  style="background:#eae1e1d1;color:#000;" onclick="" >
+<button class="collect abc"  style="background:#eae1e1d1;color:#000;" onclick="alert('Collect');" >
 <svg version="1.1" viewBox="0 0 32 32" width="20" height="20" aria-hidden="false"><path d="M14 3h4v26h-4zM29 14v4h-26v-4z"></path></svg>
 </button>
 <button class="like abc"  style="background:#eae1e1d1;" onclick="alert('Like')"> 
@@ -350,16 +350,17 @@ element {
                      {{user.name}}</a>
 					 <a id="lin3" class="url" href="">
                       @{{user.username}}</a></div></span>
-                       </div>
+              </div>
 				<div class="likebutton">
-				 <a title="Like photo" class="url" href="/imageurl">
+				 <a title="Like photo" class="url" onclick="alert('Like');">
 				<svg style="fill: #f15151;" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M17.4 29c-.8.8-2 .8-2.8 0l-12.3-12.8c-3.1-3.1-3.1-8.2 0-11.4 3.1-3.1 8.2-3.1 11.3 0l2.4 2.8 2.3-2.8c3.1-3.1 8.2-3.1 11.3 0 3.1 3.1 3.1 8.2 0 11.4l-12.2 12.8z"></path></svg>
 				</a>
-				<div><a title="Add to collection" class="url" href="imageurl"><svg style="position:relative;top: -1px;width: 32px;" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M14 3h4v26h-4zM29 14v4h-26v-4z"></path></svg><span style="display:inline;margin-left: 5px;"></span></a></div>
+				</div>
+				<div><a title="Add to collection" class="url" onclick="alert('Collect');"><svg style="position:relative;top: -1px;width: 32px;" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M14 3h4v26h-4zM29 14v4h-26v-4z"></path></svg><span style="display:inline;margin-left: 5px;"></span></a></div>
 
-				<div class="download"><a title="Download photo" href="download image" rel="nofollow" download="" target="_blank" class="downloadbtn">
+				<div class="download"><a title="Download photo" id="down" href="download image" rel="nofollow" download="" target="_blank" class="downloadbtn">
 				<svg class="overflowflex" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M25.8 15.5l-7.8 7.2v-20.7h-4v20.7l-7.8-7.2-2.7 3 12.5 11.4 12.5-11.4z"></path></svg><span style="display: inline;center" >Download free</span></a></div>
-              </div>
+              
 			  
                 </header>
                 </div>
@@ -372,7 +373,8 @@ element {
 	 -->
 	
 
-	  <div> <div class="_3dxKb"><a class="_37zTg _1l4Hh _1CBrG _1zIyn xLon9 _10F2J ldOpn NDx0k _2Xklx" href="/photos/NEsS80iDVdw/share"><div class="_10F2J"><svg class="_1xhtJ" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M0 26c0 1.7.2 3.3.6 4.9.2.9.7.9 1 0 2.1-5.3 5.5-10.3 11.1-11.3h3.3v4.4c0 2 1.2 2.6 2.6 1.4l12.8-11c.7-.6.7-1.6 0-2.3l-12.8-11c-1.4-1.3-2.6-.6-2.6 1.3v4.7c-9.6 1.6-16 9.4-16 18.9z"></path></svg><span class="_3UPwX">Share</span></div></a></div>
+	  <div> 
+	  <div class="_3dxKb"><a class="_37zTg _1l4Hh _1CBrG _1zIyn xLon9 _10F2J ldOpn NDx0k _2Xklx" href="/photos/NEsS80iDVdw/share"><div class="_10F2J"><svg class="_1xhtJ" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M0 26c0 1.7.2 3.3.6 4.9.2.9.7.9 1 0 2.1-5.3 5.5-10.3 11.1-11.3h3.3v4.4c0 2 1.2 2.6 2.6 1.4l12.8-11c.7-.6.7-1.6 0-2.3l-12.8-11c-1.4-1.3-2.6-.6-2.6 1.3v4.7c-9.6 1.6-16 9.4-16 18.9z"></path></svg><span class="_3UPwX">Share</span></div></a></div>
 	<div class="_3dxKb" style="align:left;"><p id="insta" class="url" style="color:#d1d1d1;">{{user.instagram_username}}</p></div>
 	<div class="_3dxKb"><a class="_37zTg _1l4Hh _1CBrG _1zIyn xLon9 _3JXJ6 NDx0k _2Xklx" href="/photos/NEsS80iDVdw/info"><svg class="_1rYbs" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm2 25c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-12c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v12zm0-16c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v2z"></path></svg><span class="_1efgd">Info</span></a></div>
 	  </div>
@@ -414,7 +416,7 @@ $('#my_modal').on('show.bs.modal', function(e) {
 	var username = $(e.relatedTarget).data('user').username;
     var insta = $(e.relatedTarget).data('user').insta;
 	$(e.currentTarget).find('img[id="imgg"]').attr("src", imgsrc);
-	
+	    var down = $(e.relatedTarget).data('user').down;
 	
 	/* var scset= imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80 334w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80 634w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=668&amp;q=80 668w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=934&amp;q=80 934w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=1234&amp;q=80 1234w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=1268&amp;q=80 1268w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=1534&amp;q=80 1534w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=1834&amp;q=80 1834w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=1868&amp;q=80 1868w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=2134&amp;q=80 2134w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=2434&amp;q=80 2434w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=2468&amp;q=80 2468w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=2734&amp;q=80 2734w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3034&amp;q=80 3034w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3068&amp;q=80 3068w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3334&amp;q=80 3334w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3634&amp;q=80 3634w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3668&amp;q=80 3668w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=3934&amp;q=80 3934w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4234&amp;q=80 4234w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4268&amp;q=80 4268w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4534&amp;q=80 4534w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w, '+imgsrc+'&amp;auto=format&amp;fit=crop&amp;w=4806&amp;q=80 4806w';
 	
@@ -423,7 +425,7 @@ $('#my_modal').on('show.bs.modal', function(e) {
 	
 	*/
 	
-	
+
 	
 	$(e.currentTarget).find('img[id="imgg"]').attr("alt", "Photo by "+name);
 	$(e.currentTarget).find('a[id="lin1"]').attr("href", prolink);
@@ -435,6 +437,8 @@ $('#my_modal').on('show.bs.modal', function(e) {
 	$(e.currentTarget).find('img[id="propic"]').attr("alt", "Go to "+name+"'s profile");
 	$(e.currentTarget).find('input[name="bookId"]').val(insta);
 	$(e.currentTarget).find('p[id="insta"]').html("Instagram: @"+insta);
+	$(e.currentTarget).find('a[id="down"]').attr("href", down);
+	
 	 var ht = document.getElementById('gridd');
 	console.log( ht.innerHTML);
 		$(e.currentTarget).find('div[id="modalmasonry"]').html( ht.innerHTML);
