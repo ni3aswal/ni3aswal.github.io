@@ -286,13 +286,10 @@ element {
 <input type="search" placeholder="Search photos" autocapitalize="none" spellcheck="false" role="combobox" aria-expanded="false"></div></form></div>
  </div>
   <div class="header-right">
-    <a class="active" href="#home">Home</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
   </div>
 </div>
 
-<div class="grid">
+<div class="grid" id="gridd">
   <div class="grid__col-sizer"></div>
   <div class="grid__gutter-sizer"></div>
 </div>
@@ -380,7 +377,7 @@ element {
 	<div class="_3dxKb"><a class="_37zTg _1l4Hh _1CBrG _1zIyn xLon9 _3JXJ6 NDx0k _2Xklx" href="/photos/NEsS80iDVdw/info"><svg class="_1rYbs" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false"><path d="M16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm2 25c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-12c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v12zm0-16c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v2z"></path></svg><span class="_1efgd">Info</span></a></div>
 	  </div>
 
-	
+	<div id="modalmasonry" class="grid" style="position: relative; height: 1091.25px;" ></div>
   </div>
 
 </div>
@@ -408,6 +405,8 @@ element {
 
 <script>
 $('#my_modal').on('show.bs.modal', function(e) {
+
+
       var imgsrc = $(e.relatedTarget).data('user').imgsrc;
       var name = $(e.relatedTarget).data('user').name;
 	var prolink = $(e.relatedTarget).data('user').prolink;
@@ -436,7 +435,10 @@ $('#my_modal').on('show.bs.modal', function(e) {
 	$(e.currentTarget).find('img[id="propic"]').attr("alt", "Go to "+name+"'s profile");
 	$(e.currentTarget).find('input[name="bookId"]').val(insta);
 	$(e.currentTarget).find('p[id="insta"]').html("Instagram: @"+insta);
-	
+	 var ht = document.getElementById('gridd');
+	console.log( ht.innerHTML);
+		$(e.currentTarget).find('div[id="modalmasonry"]').html( ht.innerHTML);
+
 });
 </script>
 
