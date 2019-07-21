@@ -8,7 +8,7 @@ var msnry = new Masonry( '.grid', {
   hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
 });
 
-var unsplashID = '9ad80b14098bcead9c7de952435e937cc3723ae61084ba8e729adb642daf0251';
+var unsplashID = ''; //add id here
 
 var infScroll = new InfiniteScroll( '.grid', {
   path: function() {
